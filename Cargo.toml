@@ -1,0 +1,7 @@
+[package]
+name = "unixtokio"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1.40.0", features = ["rt-multi-thread", "fs", "net", "io-std", "io-util", "sync", "macros", "signal"] }
