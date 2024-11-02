@@ -30,8 +30,8 @@ async fn server(socket_path: String, mut shutdown_receiver: Receiver<()>) {
     });
 
     println!("Listening on {socket_path}");
-    let mut buffer: [u8; 1024] = [0u8; 1024];
     while let Ok((mut stream, _)) = listener.accept().await {
+        let mut buffer: [u8; 1024] = [0u8; 1024];
         tokio::spawn(async move {
             loop {
                 match stream.read(&mut buffer).await {
